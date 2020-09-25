@@ -1,0 +1,19 @@
+
+
+form{
+	padding-top : 2em;
+	text-align : center;
+}
+
+table{
+	text-align :center;
+	margin-left:auto;
+	margin-right :auto;
+}
+
+th,td{
+	width : 20em;
+	text-align :center;
+	padding-left : 25em;	
+	padding-right : 25em;
+}

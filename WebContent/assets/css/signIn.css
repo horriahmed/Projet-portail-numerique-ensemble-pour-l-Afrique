@@ -1,0 +1,34 @@
+#menu{
+	background-color: #e3b279;
+	
+}
+
+
+input[type=text],input[type=password]{	
+	width:60%;
+	margin: 8px 0;
+}
+
+form{
+	padding-top : 2em;
+	text-align : right;
+	padding-left: 30%;
+	padding-right: 35%;
+	
+}
+
+legend{
+	text-align : center;
+}
+
+input[type=submit]{	
+	align: left;
+}
+
+label{
+	text-align: left;
+}
+
+.message{
+	text-align: center;
+}

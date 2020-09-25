@@ -1,0 +1,19 @@
+#menu{
+	position :sticky;
+	background-color: #e3b279;
+	margin-bottom : 2em;
+	
+}
+
+#listeThemes{
+	padding-left: 35%;
+	padding-right: 35%;
+	width : 35%;
+}
+
+.alert{	
+	margin-left: 35%;
+	margin-right: 35%;
+	background-color: #d94c4c;
+	text-align :center;
+}

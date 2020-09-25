@@ -1,0 +1,24 @@
+#menu{
+	background-color: #e3b279;
+	margin-bottom : 2em;
+}
+
+
+#tableau{
+	padding-left: 35%;
+	padding-right: 20%;
+}
+
+table{
+	text-align :center;	
+	width : 70%
+}
+
+th,td,tr{	
+	text-align :center;	
+}
+
+td{
+	padding-left: 2em;
+	padding-right: 2em;
+}

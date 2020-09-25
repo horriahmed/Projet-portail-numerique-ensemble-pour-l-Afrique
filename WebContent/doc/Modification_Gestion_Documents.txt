@@ -1,0 +1,52 @@
+######### Installation ###########
+
+1- Dans le dossier WebContent/WEB-INF/lib, 
+il y a deux nouveaux dossiers, il faut rajouter les jars de ces deux dossiers à tomcat../lib et aux jars du projet.
+Pour que ça prenne en compte, le système d'upload et download de fichier.
+
+
+2- Maintent que c'est pris en compte dans le projet, 
+il faut ouvrir le web.xml
+
+    2.1 il faut modifier la servlet, CreateDocument, 
+        dans la balise <param-value> </param-value>
+        Il faut remplacer le chemin absolu /Users/adonis/eclipse-workspace/EnsemblePourAfrique/
+        par un chemin vers où stocker les documents.
+        même chose pour <location></location>, il faut copier le même chemin. (C'est important)
+    
+    2.2 il faut modifier la servlet, ListDocument,
+        Appliquer les mêmes modifications que pour le 2.1, même lien dans les mêmes balises.
+
+
+3- dernière étape, il faut modifier la classe java : servlets.document.CreateDocument
+    L'attribut statique roadFoFile, changer le /Users/adonis/eclipse-workspace/EnsemblePourAfrique/
+    par le chemin absolu de l'endroit inscrit dans web.xml
+
+4- Une dernière information, si vous voulez accéder aux documents présents dans la base,
+c'est impossible car ils ne sont pas présents physiquement sur votre machine.
+
+######### Fonctionnement ########
+
+1- CreateDocument
+    Ce fonctionnement est temporaire.
+    Il y'a trois rôles qui peuvent ajouter des documents. ( La présidante/secretaire, les membres du bureau, les membres du Conseil d'administration)
+    la présidante/secretaire peut ajouter n'importe quel type de document (1,2,3) il faut utiliser l'URL createDocument?role=1 pour accéder à son environnement 
+    les membres du bureau créent des documents de type 2 (document des membres du bureau) pour le faire, utiliser l'URL createDocument?role=2
+    les membres du conseil d'administration créent des documents de type 3 (document du conseil d'administration) pour le faire, utiliser l'URL createDocument?role=3
+    Si le document est déjà présent dans la base, vous aurez un message d'information.
+
+2- ListDocument
+    Ce fonctionnement est temporaire.
+    Même chose que pour CreateDocument, 3 niveaux
+    listDocument?role=1 => tous les droits archiver, supprimer, télécharger
+    listDocument?role=2 => télécharger tous les documents, supprimer seulement ceux de type 2
+    listDocument?role=3 => télécharger tous les documents, supprimer et archiver seulement ceux de type 3
+
+3- Archivage 
+    3.1- En cliquant sur archiver document, on crée une copie du tuple présent dans la table document dans la table archive, puis on supprime le tuple document (plus présent dans les listes de documents)
+    3.2- Pour accéder à la liste des archives, utiliser l'url listArchive, On peut supprimer, ou restaurer, ou télécharger une archive depuis cette liste, 
+        cette liste sera accessible par l'administrateur, la présidante, la secrétaire, (c'est tout normalement).
+
+
+
+
